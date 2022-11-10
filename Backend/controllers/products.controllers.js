@@ -1,5 +1,6 @@
 import { pool } from "../database/db.js";
 
+//Get multiple products from the db
 export const getProducts = async (req, res) => {
   try {
     const [result] = await pool.query(
@@ -11,6 +12,7 @@ export const getProducts = async (req, res) => {
   }
 };
 
+//Get one product from the db
 export const getProduct = async (req, res) => {
   try {
     const [result] = await pool.query(
@@ -26,6 +28,7 @@ export const getProduct = async (req, res) => {
   }
 };
 
+//Create an product in the db
 export const createProducts = async (req, res) => {
   try {
     const { product_name, product_category, product_price, product_status } =
@@ -46,6 +49,7 @@ export const createProducts = async (req, res) => {
   }
 };
 
+//Update an product in the db
 export const updateProducts = async (req, res) => {
   try {
     const [result] = await pool.query(
@@ -61,6 +65,7 @@ export const updateProducts = async (req, res) => {
   }
 };
 
+//Delete an product from the db
 export const deleteProducts = async (req, res) => {
   try {
     const [result] = await pool.query("DELETE FROM products_table WHERE id=?", [

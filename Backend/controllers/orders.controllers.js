@@ -1,5 +1,6 @@
 import { pool } from "../database/db.js";
 
+//Get multiple orders from the db
 export const getOrders = async (req, res) => {
   try {
     const [result] = await pool.query(
@@ -11,6 +12,7 @@ export const getOrders = async (req, res) => {
   }
 };
 
+//Get one order from the db
 export const getOrder = async (req, res) => {
   try {
     const [result] = await pool.query("SELECT * FROM order_table WHERE id=?", [
@@ -25,6 +27,7 @@ export const getOrder = async (req, res) => {
   }
 };
 
+//Create an order in the db
 export const createOrder = async (req, res) => {
   try {
     const {
@@ -69,6 +72,7 @@ export const createOrder = async (req, res) => {
   }
 };
 
+//Update an order in the db
 export const updateOrder = async (req, res) => {
   try {
     const [result] = await pool.query("UPDATE order_table SET ? WHERE id= ?", [
@@ -84,6 +88,7 @@ export const updateOrder = async (req, res) => {
   }
 };
 
+//Delete an order from the db
 export const deleteOrder = async (req, res) => {
   try {
     const [result] = await pool.query("DELETE FROM order_table WHERE id=?", [

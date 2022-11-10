@@ -6,6 +6,7 @@ import {
   updateOrder,
   deleteOrder,
 } from "../controllers/orders.controllers.js";
+
 import {
   getProducts,
   getProduct,
@@ -13,6 +14,7 @@ import {
   updateProducts,
   deleteProducts,
 } from "../controllers/products.controllers.js";
+
 import {
   createProductsSummary,
   deleteProductsSummary,
@@ -45,7 +47,7 @@ router.put("/products/:id", updateProducts);
 
 router.delete("/products/:id", deleteProducts);
 
-//Routes for orders' summarize
+//Routes for orders summarize
 router.get("/sum", getProductsSummary);
 
 router.get("/sum/:id", getProductSummary);
